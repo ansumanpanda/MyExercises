@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="helloWorld" class="core.beans.HelloWorld">
+       <property name="message" value="Hello World!"/>
+       <!-- <property name="message1" value="Hello Another World!"/> -->
+   </bean>
+   
+  <!--  <bean id="helloWorldChild" class="com.ansu.spring.core.helloworld.HelloWorldChildBean" parent="helloWorld">
+       <property name="message" value="Hello World in India!"/>
+       <property name="message2" value="Hello India!"/>
+   </bean>
+   <bean class="com.ansu.spring.core.helloworld.InitHelloWorld" /> -->
+   
+   <bean id="circle" class="com.ansu.core.beans.Circle">
+       <property name="type" value="Semi"/>
+   </bean>
+   
+   <bean id="square" class="com.ansu.core.beans.Square">
+       <property name="type" value="Half"/>
+   </bean>
+   
+   <bean id="rectangle" class="com.ansu.core.beans.Rectangle">
+       <property name="type" value="Horizontal"/>
+   </bean>
+   
+   
+   
+</beans>
