@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ansu.config.RoomConfig;
 import com.ansu.domain.Room;
 import com.ansu.domain.RoomDetails;
+import com.ansu.service.HotelServiceManger;
 import com.ansu.service.RoomService;
 
 public class RoomAppClient {
@@ -14,17 +15,19 @@ public class RoomAppClient {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		Room room = new Room("alex", "luxury", 200.00);
+		
 		ApplicationContext context= new AnnotationConfigApplicationContext(RoomConfig.class);
 		
-		RoomService marriotHotelRoomService= context.getBean(RoomService.class);
+		//RoomService marriotHotelRoomService= context.getBean(RoomService.class);
 		
-		//RoomService marriotHotelRoomService= (RoomService)context.getBean("marriotHotelRoomService");
+		RoomService marriotHotelRoomService= (RoomService)context.getBean("roomService");
 		
-		Room marriotRoom = new Room("alex", "luxury", 200.00);
+		
 		
 		if(marriotHotelRoomService!=null)
 		{
-			marriotHotelRoomService.addRoom(marriotRoom);
+			marriotHotelRoomService.addRoom(room);
 		}
 		
 		RoomDetails roomDetails= context.getBean(RoomDetails.class);
@@ -33,6 +36,11 @@ public class RoomAppClient {
 		{
 			System.out.println("No of Beds:"+roomDetails.getNoOfBeds());
 		}
+		
+		
+		
+		HotelServiceManger hotelServiceManger=context.getBean(HotelServiceManger.class);
+		hotelServiceManger.getHotelRoomDetails(room);
 		
 		 ((ConfigurableApplicationContext) context).close();
 
