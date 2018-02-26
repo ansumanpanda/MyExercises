@@ -9,10 +9,10 @@ import com.ansu.service.impl.HotelServiceMangerImpl;
 @Configuration
 public class HotelServiceMangerConfig {
 
-	@Bean
+	/*@Bean
 	public HotelServiceManger hotelServiceManger()
 	{
 		return new HotelServiceMangerImpl();
-	}
+	}*/
 	
 }

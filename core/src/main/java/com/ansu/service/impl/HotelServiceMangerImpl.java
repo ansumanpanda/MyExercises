@@ -8,7 +8,7 @@ import com.ansu.domain.Room;
 import com.ansu.service.HotelServiceManger;
 import com.ansu.service.RoomService;
 
-//@Component
+@Component
 public class HotelServiceMangerImpl implements HotelServiceManger {
 
 	@Autowired
