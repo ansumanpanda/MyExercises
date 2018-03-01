@@ -1,4 +1,4 @@
-package com.ansu;
+package com.ansu.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,7 +15,7 @@ public class EmployeeController {
  
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public ModelAndView showForm() {
-        return new ModelAndView("employeeHome.jsp", "employee", new Employee());
+        return new ModelAndView("employee.jsp", "employee", new Employee());
     }
  
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
@@ -27,6 +27,6 @@ public class EmployeeController {
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("id", employee.getId());
-        return "employeeView";
+        return "employeeView.jsp";
     }
 }

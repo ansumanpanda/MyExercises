@@ -1,4 +1,4 @@
-package com.ansu;
+package com.ansu.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -6,19 +6,16 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return new Class[]{HelloWorldWebConfig.class};
+		return null;
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		// TODO Auto-generated method stub
 		return new Class[]{HelloWorldWebConfig.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		// TODO Auto-generated method stub
 		return new String[]{ "/" }; 
 	}
 

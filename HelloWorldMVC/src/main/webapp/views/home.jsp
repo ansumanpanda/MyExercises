@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Addition Results will come over here</h2>
+	<h2>Welcome to the Super Specialty Sports Center</h2>
 </body>
 </html>
