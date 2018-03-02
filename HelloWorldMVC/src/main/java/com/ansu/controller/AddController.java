@@ -31,7 +31,7 @@ public class AddController {
 		
 		ModelAndView mv=new ModelAndView();
 		mv.addObject("result", k);
-		mv.setViewName("display.jsp");
+		mv.setViewName("display");
 		
 		return mv;
 		
