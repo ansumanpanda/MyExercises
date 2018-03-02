@@ -1,11 +1,13 @@
 package com.ansu.entity;
 
+import javax.validation.constraints.Size;
+
 import com.sun.istack.internal.NotNull;
 
 public class Employee {
 	
 	@NotNull
-	//@Size(Min="2",MAX="5")
+	@Size(min=2, max=5)
 	private String name;
     private long id;
     private String contactNumber;
