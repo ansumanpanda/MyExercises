@@ -2,8 +2,12 @@ package com.ansu.entity;
 
 import javax.validation.constraints.Size;
 
+import org.springframework.context.annotation.PropertySource;
+
 import com.sun.istack.internal.NotNull;
 
+
+//@PropertySource("classpath:validationError.properties")
 public class Employee {
 	
 	@NotNull
