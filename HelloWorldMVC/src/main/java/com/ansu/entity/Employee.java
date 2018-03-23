@@ -15,6 +15,9 @@ public class Employee {
 	private String name;
     private long id;
     private String contactNumber;
+    private int country;
+    private int state;
+    
 	public String getName() {
 		return name;
 	}
@@ -32,6 +35,18 @@ public class Employee {
 	}
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
+	}
+	public int getCountry() {
+		return country;
+	}
+	public void setCountry(int country) {
+		this.country = country;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
 	}
 
 }
