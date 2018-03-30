@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -15,13 +16,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ansu.entity.Employee;
 import com.ansu.entity.SelectOptions;
+import com.ansu.repository.StudentJdbcRepository;
 
 @Controller
 public class EmployeeController {
+	
+	@Autowired
+    StudentJdbcRepository repository;
  
     @RequestMapping(value = "/employee/{employeeId}", method = RequestMethod.GET)
     public String showForm(@PathVariable long employeeId,ModelMap model) {
     	System.out.println("Inside show Employee Form :"+employeeId);
+    	
+    	repository.findById(10001L);
     	
     	 //List<SelectOptions> countryList = categoryService.getAllCategories();
     	 List<SelectOptions> country = getAllCountry();
