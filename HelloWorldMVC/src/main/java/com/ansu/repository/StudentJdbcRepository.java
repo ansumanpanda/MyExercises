@@ -21,13 +21,13 @@ public Student findById(long id) {
 }
 
 
-public JdbcTemplate getJdbcTemplate() {
+/*public JdbcTemplate getJdbcTemplate() {
 	return jdbcTemplate;
 }
 
 
 public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 	this.jdbcTemplate = jdbcTemplate;
-}
+}*/
 
 }

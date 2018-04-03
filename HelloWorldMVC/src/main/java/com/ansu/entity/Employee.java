@@ -17,6 +17,7 @@ public class Employee {
     private String contactNumber;
     private int country;
     private int state;
+    private String studentName;
     
 	public String getName() {
 		return name;
@@ -47,6 +48,12 @@ public class Employee {
 	}
 	public void setState(int state) {
 		this.state = state;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 }

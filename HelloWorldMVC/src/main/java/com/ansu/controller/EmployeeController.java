@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ansu.entity.Employee;
 import com.ansu.entity.SelectOptions;
+import com.ansu.entity.Student;
 import com.ansu.repository.StudentJdbcRepository;
 
 @Controller
@@ -28,12 +29,15 @@ public class EmployeeController {
     public String showForm(@PathVariable long employeeId,ModelMap model) {
     	System.out.println("Inside show Employee Form :"+employeeId);
     	
-    	repository.findById(10001L);
+    	Student student =repository.findById(employeeId);
+    	
+    	System.out.println("Student Name :"+student.getName());
     	
     	 //List<SelectOptions> countryList = categoryService.getAllCategories();
     	 List<SelectOptions> country = getAllCountry();
          model.addAttribute("countryList", country);
          model.addAttribute("employee",  new Employee());
+         model.addAttribute("studentName",  student.getName());
         //return new ModelAndView("employee", "employee", new Employee());
          
          return "employee";

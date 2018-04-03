@@ -83,6 +83,10 @@
     					</sf:select>
                 	 </td>
     			</tr>
+    			 <tr>
+                    <td><sf:label path="studentName">Student Name</sf:label></td>
+                    <td><c:out value="${studentName}"/></td>
+                </tr>
                 <tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>

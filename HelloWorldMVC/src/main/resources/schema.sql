@@ -25,3 +25,9 @@ CREATE OR REPLACE TABLE EMPLOYEE
    passport_number varchar(255) not null,
    primary key(id)
 );
+
+CREATE TABLE users (
+  id         INTEGER PRIMARY KEY,
+  name VARCHAR(30),
+  email  VARCHAR(50)
+);
