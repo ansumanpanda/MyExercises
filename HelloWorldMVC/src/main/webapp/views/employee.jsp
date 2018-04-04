@@ -53,8 +53,8 @@
 			
 			<!-- Pattern3 : New way added by Spring 4.0(and 3.2.3) -->
 			
-			<sf:form method="POST" servletRelativeAction="/addEmployee" modelAttribute="employee">
-        	<c:set var="Income" scope="session" value="${getLabel()}"/>
+			<sf:form method="POST" servletRelativeAction="/addEmployee" modelAttribute="employee" class="form-">
+        	<%-- <c:set var="Income" scope="session" value="${getLabel()}"/> --%>
         	<sf:errors path="*" element="div" cssClass="errors" />
              <table>
                 <tr>
@@ -91,6 +91,16 @@
                     <td><sf:label path="studentName">Student Name</sf:label></td>
                     <td><c:out value="${studentName}"/></td>
                 </tr>
+                 <tr>
+                    <td><sf:label path="formInputData['firstName']">Student FirstName</sf:label></td>
+                    <td><sf:input path="formInputData['firstName']"/></td>
+                </tr>
+                 <tr>
+                    <td><sf:label path="formInputData['lastName']">Student LastName</sf:label></td>
+                    <td><sf:input path="formInputData['lastName']"/></td>
+                </tr>
+                
+                
                 <tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>

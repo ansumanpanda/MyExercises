@@ -2,7 +2,9 @@ package com.ansu.controller;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -28,25 +30,43 @@ public class EmployeeController {
 	@Autowired
     StudentJdbcRepository repository;
  
+	
+	
+	 //Spring binding values in a Map
+	
     @RequestMapping(value = "/employee/{employeeId}", method = RequestMethod.GET)
     public String showForm(@PathVariable long employeeId,ModelMap model) {
     	System.out.println("Inside show Employee Form :"+employeeId);
     	
-    	Student student =repository.findById(employeeId);
+    	//Student student =repository.findById(employeeId);
     	
-    	System.out.println("Student Name :"+student.getName());
+    	//System.out.println("Student Name :"+student.getName());
     	
     	 //List<SelectOptions> countryList = categoryService.getAllCategories();
+    	
+    	Employee employee =new Employee();
+    	
+    	Map<String,String> formInputData=new LinkedHashMap<String,String>();
+    	
+    	formInputData.put("firstName", "Ravi");
+    	formInputData.put("lastName", "Shyam");
+    	employee.setFormInputData(formInputData);
+    	
+    	
     	 List<SelectOptions> country = getAllCountry();
          model.addAttribute("countryList", country);
-         model.addAttribute("employee",  new Employee());
-         model.addAttribute("studentName",  student.getName());
+         model.addAttribute("employee", employee);
+         model.addAttribute("studentName",  "abc");
         //return new ModelAndView("employee", "employee", new Employee());
          
          return "employee";
     }
  
-   /* @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    
+    
+   
+
+    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String submit(@Valid Employee employee, 
       BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
@@ -56,9 +76,9 @@ public class EmployeeController {
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("id", employee.getId());
         return "employeeView";
-    }*/
+    }
     
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+   /* @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String submit(@RequestBody MultiValueMap<String,String> formData, 
       BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
@@ -77,7 +97,7 @@ public class EmployeeController {
         model.addAttribute("contactNumber", "518");
         model.addAttribute("id", 1);
         return "employeeView";
-    }
+    }*/
     
     
     

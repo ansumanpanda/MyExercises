@@ -1,8 +1,9 @@
 package com.ansu.entity;
 
-import javax.validation.constraints.Size;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import org.springframework.context.annotation.PropertySource;
+import javax.validation.constraints.Size;
 
 import com.sun.istack.internal.NotNull;
 
@@ -18,6 +19,9 @@ public class Employee {
     private int country;
     private int state;
     private String studentName;
+    
+    private Map<String, String> formInputData = new LinkedHashMap<String, String>();
+    
     
 	public String getName() {
 		return name;
@@ -60,5 +64,11 @@ public class Employee {
     {
     	return "hello";
     }
+	public Map<String, String> getFormInputData() {
+		return formInputData;
+	}
+	public void setFormInputData(Map<String, String> formInputData) {
+		this.formInputData = formInputData;
+	}
 
 }
