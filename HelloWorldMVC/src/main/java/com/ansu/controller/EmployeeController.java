@@ -1,6 +1,7 @@
 package com.ansu.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -8,8 +9,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,7 +46,7 @@ public class EmployeeController {
          return "employee";
     }
  
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+   /* @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String submit(@Valid Employee employee, 
       BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
@@ -52,6 +55,27 @@ public class EmployeeController {
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("id", employee.getId());
+        return "employeeView";
+    }*/
+    
+    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    public String submit(@RequestBody MultiValueMap<String,String> formData, 
+      BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+            return "employee";
+        }
+        if(formData!=null && formData.size()>0)
+        {
+        	for(String key :formData.keySet())
+        	{
+        		System.out.println("key :"+key);
+        		System.out.println("value :"+formData.get(key));
+        		
+        	}
+        }
+        model.addAttribute("name", "ansuman");
+        model.addAttribute("contactNumber", "518");
+        model.addAttribute("id", 1);
         return "employeeView";
     }
     
@@ -124,4 +148,6 @@ public class EmployeeController {
     	
     	return stateList;
     }
+    
+    
 }

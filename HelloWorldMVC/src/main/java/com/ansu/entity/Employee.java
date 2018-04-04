@@ -55,5 +55,10 @@ public class Employee {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
+	
+	public String getLabel()
+    {
+    	return "hello";
+    }
 
 }
