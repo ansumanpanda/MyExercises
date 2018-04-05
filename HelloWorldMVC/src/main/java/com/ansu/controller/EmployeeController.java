@@ -24,7 +24,7 @@ import com.ansu.entity.SelectOptions;
 import com.ansu.entity.Student;
 import com.ansu.repository.StudentJdbcRepository;
 
-@Controller
+@Controller(value="planesController")
 public class EmployeeController {
 	
 	@Autowired
@@ -167,6 +167,11 @@ public class EmployeeController {
     	
     	
     	return stateList;
+    }
+    
+    public String getLabel(String name,Long id)
+    {
+    	return "hello "+name +" id :"+id;
     }
     
     

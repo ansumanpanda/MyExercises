@@ -54,7 +54,8 @@
 			<!-- Pattern3 : New way added by Spring 4.0(and 3.2.3) -->
 			
 			<sf:form method="POST" servletRelativeAction="/addEmployee" modelAttribute="employee" class="form-">
-        	<%-- <c:set var="Income" scope="session" value="${getLabel()}"/> --%>
+        	<s:eval expression="@planesController.getLabel(\'Ansuman\',10)" var="planes" />
+        	<c:out value="${planes}"/> 
         	<sf:errors path="*" element="div" cssClass="errors" />
              <table>
                 <tr>
